@@ -1,4 +1,30 @@
-<p>profile component!</p>
 <div *ngIf="user">
-	<p>Name: {{user.name}}</p>
+	<div class="card">
+		<h3 class="card-header">{{user.name}}</h3>
+		<div class="card-block">
+			<div class="row">
+				<div class="col-md-3">
+					<img class="card-img" src="{{user.avatar_url}}" alt="">
+					<p class="form-group">
+						<a class="btn btn-secondary btn-block" target="_blank" href="{{user.html_url}}">View profile</a>
+					</p>
+				</div>
+				<div class="col-md-9">
+					<div class="stats">
+						<span class="badge badge-default">{{user.public_repos}} Public repos</span>
+						<span class="badge badge-primary">{{user.public_gists}} Public gists</span>
+						<span class="badge badge-success">{{user.followers}} Followers</span>
+						<span class="badge badge-info">{{user.following}} Following</span>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item"><strong>Username:&ensp;</strong>{{user.login}}</li>
+						<li class="list-group-item"><strong>Location:&ensp;</strong>{{user.location}}</li>
+						<li *ngIf="user.email as email" class="list-group-item"><strong>Email:&ensp;</strong>{{email}}</li>
+						<li *ngIf="user.blog as blog" class="list-group-item"><strong>Blog:&ensp;</strong><a target="_blank" href="{{blog}}">{{blog}}</a></li>
+						<li class="list-group-item"><strong>Member since:&ensp;</strong>{{user.created_at}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
