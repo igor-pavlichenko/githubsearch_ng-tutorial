@@ -8,9 +8,11 @@ import { GithubService } from '../services/github.service';
 })
 export class ProfileComponent implements OnInit {
 
+	private user: any[];
+
 	constructor(private githubService: GithubService) {
 		this.githubService.getUser().subscribe(user => {
-			console.log(user);
+			this.user = user;
 		});
 	}
 
