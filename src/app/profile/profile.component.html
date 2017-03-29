@@ -27,4 +27,27 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="card">
+		<h4 class="card-header">
+			User repositories
+		</h4>
+		<div class="card-block">
+			<div *ngFor="let repo of repos">
+				<div class="row">
+					<div class="col-md-9">
+						<h5>
+							<a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
+						</h5>
+						<p>{{repo.description}}</p>
+					</div>
+					<div class="col-md-3">
+						<span class="badge badge-default">{{repo.watchers}} Watchers</span>
+						<span class="badge badge-primary">{{repo.forks}} Forks</span>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</div>
 </div>
