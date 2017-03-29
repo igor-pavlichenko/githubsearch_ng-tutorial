@@ -1,3 +1,9 @@
+<form class="form-group pt-3">
+	<input 	class="form-control" type="text" placeholder="Type GitHub username..."
+			[(ngModel)]="username" name="username"
+			(keyup)="searchUser()">
+</form>
+
 <div *ngIf="user">
 	<div class="card">
 		<h3 class="card-header">{{user.name}}</h3>
